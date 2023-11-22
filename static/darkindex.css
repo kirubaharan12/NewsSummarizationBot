@@ -1,0 +1,682 @@
+/* code for top-bar section */
+body, h1 {
+    margin: 0;
+    background-image: url();
+    background-size: cover;
+    background-color: #131212;
+  }
+
+#btn-dn{
+    background-color: #ffffff;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    border: 1px solid #f8f8f8;
+}
+
+#btn-dn:hover{
+    background-color: #000000;
+    color: #fdfeff;
+    border: 1px solid #ffffff;
+}
+
+.top-bar {
+    background-color: #000000; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+}
+
+.top-bar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+}
+
+.top-bar .buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.top-bar .top-button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.top-bar .top-button:hover {
+    text-decoration: underline;
+}
+
+#theme-toggle{
+    background-color: transparent;
+    border: none;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 0 15px 0 15px;
+}
+
+#theme-toggle:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+
+}
+
+/* the article message and a image */
+.side-image {
+    display: flex;
+    height: 500px;
+    margin: 10px; 
+}
+
+.message {
+    flex: 1;
+    padding: 20px;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    color: #f0f0f0;
+}
+
+.message h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #f8f8f8;
+}
+
+.simage {
+    flex: 1;
+    background-image: url();
+    background-size: cover;
+    box-shadow: -5px 5px 10px rgb(255, 255, 255);
+    margin:15px;
+    border-radius: 7px;
+
+}
+
+
+.simage {
+    position: relative;
+    width: 600px;
+    height: 500px; 
+    overflow: hidden; 
+    border: 1px solid #ccc;
+}
+
+.inner-container {
+    display: flex;
+    width: 200%; 
+    transition: transform 0.3s ease-in-out; 
+}
+
+.div1,
+.div2 {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* Style the navigation buttons */
+.prev-btn,
+.next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    background-color:transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.prev-btn {
+    left: 10px;
+    font: #c6cfd8;
+    /* background-image: url(testarrow.png); */
+    background-size: cover;
+    background-position: center;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.next-btn {
+    right: 10px;
+    /* background-image: url(testarrow.png); */
+    background-size: cover;
+    background-position: center;
+    border: none;
+    cursor: pointer;
+}
+
+.limg{
+    height: 10px;
+}
+/* code for search section bar */
+
+.search-section-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-top: 50px;
+    color: #ffffff;
+
+}
+
+.search-section-first{
+    color: #ffffff;
+    width: 40%;
+    background-color: rgb(22, 21, 21);
+    box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.9);
+    align-items: center;
+    text-align: center;
+    height: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 6px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-label-search {
+    font-size: 18px;
+    color: #ffffff;
+}
+
+/* Style the input field */
+.input-search {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.ip-search {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s ease-in-out;
+}
+
+.ip-search::placeholder {
+    color: #999;
+}
+
+/* Style the search button */
+.search-button-fetch {
+    padding: 10px 20px;
+    background-color: #ffffff; 
+    color: rgb(10, 10, 10);
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.7s ease-in-out;
+}
+
+.search-button-fetch:hover {
+    background-color: #999;
+    color: #ffffff;
+    font-size: 16px;
+
+}
+
+
+.search-section-second{
+    padding-left: 10px;
+    padding-right: 100px;
+    width: 50%;
+
+}
+
+/* code for catogory section bar */
+
+.category-section-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    padding-top: 30px;
+    color: #ffffff;
+}
+
+.category-section{
+    width: 40%;
+    box-shadow: -5px -5px 10px rgb(255, 255, 255);
+    background-color: rgb(22, 21, 21);
+    align-items: center;
+    text-align: center;
+    height: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 6px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-label {
+    font-size: 18px;
+    color: #ffffff;
+}
+
+/* Style the select dropdown */
+.styled-select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s ease-in-out;
+}
+
+/* Style the button */
+.top-button {
+    padding: 10px 20px;
+    background-color: #fff; 
+    color: black;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.top-button:hover {
+    color: #ffffff;
+    background-color: #ccc; 
+}
+
+.category-section-message{
+    padding-left: 100px;
+    padding-right: 10px;
+    width: 50%;
+
+}
+
+ /* URL input section */
+
+ .url-bar{
+    margin: 10px;
+ }
+ 
+ .url-input-full{
+    display: flex;
+    align-items: center;
+    height: 70px;
+    margin: 60px 0 30px 0;
+ }
+ .url-inputbar{
+    float: left;
+    width: 70%;
+ }
+
+ .url-inputbar input{
+    width: 92%;
+    height: 30px;
+    margin:0 2% 0 6%;
+    border: 2px solid #cad0d5;
+    border-radius: 4px;
+    background-color: #101010;
+    font-size: 16px;
+    color: hsl(0, 0%, 95%); 
+    font-family: Arial, sans-serif;
+
+ }
+
+ .url-inputbar input::placeholder{
+    color: #ffffff;
+ }
+
+ .url-inputbar input:hover {
+    color: #000000;
+    background-color: #ffffff; 
+}
+
+ .url-inputbar input:focus {
+    border-color: #f9f9f9; 
+    box-shadow: 0 0 5px rgba(187, 194, 201, 0.5); 
+}
+
+.url-inputbar input:disabled {
+    background-color: #ccc; 
+    cursor: not-allowed; 
+}
+ .url-button{
+    float: right;
+    width: 30%;
+ }
+ .url-button input{
+    width: 80%;
+    height: 40px;
+    margin: 0 20% 0 0;
+    color: #000000;
+    border: #ffffff;
+    background-color: #ffffff;
+    border-radius: 5px;
+    font-size: 20px;
+ }
+
+ /* language section and url-output section */
+
+.language-and-message{
+    display: flex;
+}
+
+.language-container{
+    flex:10%;
+    text-align: center;
+    height: 300px;
+    /* box-shadow: 
+    0px 5px 10px rgba(255, 255, 255, 0.775), 
+    0px -5px 10px rgba(255, 255, 255, 0.844), 
+    5px 0px 10px rgba(254, 254, 254, 0.832); */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 300px;
+    border-radius: 6px;
+    margin-left: 10px;
+    
+}
+
+.input-language label {
+    font-size: 18px;
+    color: #ffffff; 
+    margin-bottom: 10px;
+    display: block; 
+}
+
+/* Style the language input field */
+.input-language input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s ease-in-out;
+}
+
+.input-language input::placeholder {
+    color: #999; 
+}
+
+/* Style the labels for language selection */
+.slang {
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    margin-top: 10px; 
+    padding: 8px 16px;
+    background-color: #ffffff; 
+    border-radius: 4px;
+}
+
+h4 {
+    margin-top: 10px;
+    color: white;
+}
+
+
+
+.summary{
+    flex:50%;
+    height: 300px;
+    color: #ffffff;
+    background-color: rgb(27, 24, 24);
+    border-radius: 5px;
+    margin: 0 10px 0 10px ;
+    box-shadow: rgba(255, 255, 255, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+
+.summary-empty{
+    margin: 10px;
+}
+
+.summary-output{
+    margin: 10px;
+}
+
+/* audio file */
+
+.audio{
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    background-color: #131313;
+}
+
+.audio-message{
+    background-color: #131313;
+    color: #ffffff;
+}
+
+.audio-selection{
+    flex:60%;
+    text-align: center;
+    display: inline-block;
+    padding: 20px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    box-shadow: -5px -5px 10px rgb(255, 255, 255);
+    border-radius: 8px; 
+    margin-right: 10%;
+    width: 250px; 
+    height:150px;
+
+}
+
+.audio-selection h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Style the file input */
+.audio-input {
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 80%; 
+    outline: none;
+    transition: border-color 0.2s ease-in-out;
+}
+
+/* Style the submit button */
+.audio-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #ffffff; 
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.audio-button:hover {
+    color: #ffffff;
+    background-color: #ccc; 
+}
+
+.audio-div{
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.audio-output{
+    margin: 10px 10px 10px 10px;
+}
+.empty-audio-output{
+    margin: 0 30px 0 30px;
+}
+
+.audio{
+    margin:40px 0 60px 0;
+}
+
+
+
+/* code for ext summarizer */
+
+.pdf-summarizer{
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center;
+}
+
+.ext-input{
+    flex: 30%;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 5px -5px 10px rgba(249, 249, 249, 0.873);
+    border-radius: 8px; 
+    margin-left: 4%;
+    margin-bottom: 30px;
+    background-color: transparent;
+
+
+}
+
+.file-label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.file-input {
+    padding: 10px;
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f9f9f9;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-button:hover {
+    background-color:#CCC;
+}
+
+
+.ext-output{
+    flex: 60%;
+    margin: 20px;
+    color: white;
+}
+
+
+/* code for abs - summarizer */
+
+
+.abs-pdf-summarizer{
+    display: flex;
+    align-items: center;
+}
+
+.abs-input{
+    flex: 50%;
+    text-align: center;
+    display: inline-block;
+    padding: 20px;
+    color: white;
+    cursor: pointer;
+    box-shadow: -5px -5px 10px rgba(255, 254, 254, 0.858);
+    border-radius: 8px; 
+    margin-right: 4%;
+    margin-bottom: 30px;
+    width: 40%; 
+    height:200px;
+
+    max-width: 400px;
+    
+}
+
+.abs-input h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.abs-input label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.abs-input input[type="file"] {
+    padding: 10px;
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.abs-input input[type="submit"] {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: rgb(8, 8, 8);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.abs-input input[type="submit"]:hover {
+    background-color: #CCC;
+}
+
+.abs-output{
+    flex: 50%;
+    margin: 20px;
+
+    color: white;
+}

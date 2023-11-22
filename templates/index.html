@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Article Summarizer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="theme-style" rel="stylesheet" type="text/css" href="{{url_for('static',filename='index.css')}}">
+</head>
+<body>
+
+    <!-- code for the top bar -->
+    <div class="top-bar">
+        <div class="logo">FEATHERS</div>
+        <div class="buttons">
+            <form method="GET" action="{{ url_for('result') }}">
+                <button class="top-button" style="font-weight: bold;">Top news</button>
+            </form>
+            <button class="top-button" style="font-weight: bold;">Sign out</output></button>
+            <button id="theme-toggle" style="font-weight: bold;">Dark</button>
+            
+            <!-- Add the button that navigates to chatbot.html -->
+            <a href="{{ url_for('chatbot') }}" class="top-button" style="font-weight: bold;">Chatbot</a>
+        </div>
+    </div>
+    
+    <div class="side-image">
+    <div class="message">
+        <h3>Summarize any Article<br>
+            in a click.</h3>
+            <p>"Unlock knowledge effortlessly with our summarizer bots. Get quick news updates, simplify articles, and master topics, all with a click. Listen and learn with our Audio Summarizer Bot. It's the future of information at your fingertips."
+
+            </p>
+    </div>
+    <div class="simage">
+        
+        <iframe src="{{ url_for('static', filename='chatbot.html') }}" width="100%" height="90%"></iframe>
+    </div>
+    </div>
+    
+<!-- code for the search section -->
+<div class="search-section-bar">
+    <div class="search-section-first">
+        <form method="POST" action="{{ url_for('result') }}">
+            <label for="topic" class="input-label-search">Topic:</label>
+            <div class="input-search">
+                <input class="ip-search" type="text" id="topic" name="topic" placeholder="Enter the topic...">
+            </div>
+            <div class="search-section-bt">
+                <button  id="btn-dn" type="submit" class="search-button-fetch">Fetch News</button>
+            </div>
+        </form>
+    </div>
+    <div class="search-section-second">
+        <p>
+            Summarize any topic in a click.This is a clear and concise way to state the option's functionality, and it is also specific to the fact that the topic can be anything.
+        </p>
+    </div>
+</div>
+
+<!-- code for catogory section -->
+    <div class="category-section-bar">
+        <div class="category-section-message">
+            <p>
+                Summarize any topic in a click.This is a clear and concise way to state the option's functionality, and it is also specific to the fact that the topic can be anything.
+            </p>
+        </div>
+        <div class="category-section">
+            <form method="POST" action="{{ url_for('result') }}">
+                <label for="category" class="input-label">Category:</label>
+                <select id="category" name="category" class="styled-select">
+                    <option value="WORLD">World</option>
+                    <option value="NATION">Nation</option>
+                    <option value="BUSINESS">Business</option>
+                    <option value="TECHNOLOGY">Technology</option>
+                    <option value="ENTERTAINMENT">Entertainment</option>
+                    <option value="SPORTS">Sports</option>
+                    <option value="SCIENCE">Science</option>
+                    <option value="HEALTH">Health</option>
+                </select>
+                <div class="centered-category">
+                <button id="btn-dn" class="top-button" type="submit" class="styled-button">Fetch Category News</button>
+                </div>
+            </form>
+        </div>
+        </div>
+
+    <!-- code for the summarized article -->
+    <div class="url-bar">
+            <form method="post" action="/home">
+                <div class="url-input-full">
+                    <div class="url-inputbar">
+                        <input class="url-inputbarinner" type="text" id="url" name="url" placeholder="Enter URL here....">
+                    </div>
+                    <div class="url-button">
+                        <input id="btn-dn"  class="url-buttoninner" type="submit" value="Summarize">
+                    </div>
+                </div>
+            <div class="language-and-message">
+                <!-- <div class="language-container">
+                    <div class="input-language">
+                        <label for="language">Lang:</label>
+                        <input type="text" id="language" name="language" placeholder="Enter language here....">
+                    </div>
+                    <label class="slang">English</label>
+                    <h4>To</h4>
+                    <label class="slang">Lang</label>
+                </div>
+                <div class="language-container">
+                    <div class="input-language">
+                        <label for="language">Lang:</label>
+                        <input type="text" id="language" name="language" placeholder="Enter language here....">
+                    </div>
+                </div>  -->
+
+                <div class="summary">
+                    {% if title %}
+                    <div class = "summary-title">
+                        <p>{{ title }}</p>
+                    </div>
+                    <div class ="summary-output">
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            {{ summary }}</p>
+                    </div>
+                    {% else %}
+                    <div class = "summary-empty">
+                        <p>Enter the url to summarize the news...</p>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+                
+            </form>
+    </div>
+
+    <div style="margin: 10px 0 10px 0;">
+        <p>&nbsp;</p>
+    </div>
+
+<!-- audio section -->
+    <div class="audio">
+        <div id="audio-message">
+            <div class="audio-div">
+                {% if title %}
+                <div class="audio-output">
+                    <p>{{ transcript }}</p>
+                </div>
+                {% else %}
+                <div class="empty-audio-output">
+                    <p>
+                        "Unleash the potential of your audio content with our remarkable audio summarizer. Whether it's insightful podcasts, enlightening lectures, or captivating interviews, our technology distills the essence, saving you time and offering a condensed masterpiece. Experience the future of audio comprehension today."
+                    </p>
+                </div>
+                {% endif %}
+            </div>  
+        </div>
+
+        <div class="audio-selection">
+            <h3>Choose the Audio file</h3>
+            <form method="POST" enctype="multipart/form-data" action="/speech">
+                <input class="audio-input" type="file" name="file" />
+                <input id="btn-dn"  class="audio-button" type="submit" value="Transcribe" />
+            </form>
+       </div>
+    </div>
+
+
+<!-- code for pdf summarization -->
+
+
+    <div class="pdf-summarizer">
+        <div class="ext-input">
+            <form class="ext-ip" method="POST" action="/summarize" enctype="multipart/form-data">
+                <label for="pdf_file" class="file-label">Upload a PDF file:</label>
+                <input type="file" name="pdf_file" accept=".pdf" class="file-input">
+                <input type="submit" id="btn-dn" value="Summarize" class="submit-button">
+            </form>
+        </div>
+      <div class="ext-output">
+            {% if summary %}
+            <h2>Summary:</h2>
+            <p>{{ summary }}</p>
+            {% else %}
+            <div class="emty-div-ext">
+                <h2 style="text-align: center;">Extractive summarization</h2>
+            <p>Elevate your reading experience with our app's extractive summarization. We automatically condense lengthy texts into concise, key-point summaries, making it effortless to grasp the core message of any content. Say goodbye to information overload and hello to efficient knowledge consumption.</p>
+            </div> 
+        {% endif %}
+
+        {% if error %}
+            <h2>Error:</h2>
+            <p>{{ error }}</p>
+        {% endif %}
+        </div>
+        
+    </div>
+    <div class="abs-pdf-summarizer">
+        <div class="abs-output">
+            {% if summarize %}
+            <h2>Summary:</h2>
+            <p>{{ summarize }}</p>
+            {% else %}
+            <div class="emty-div-ext">
+                
+                 <h2 style="text-align: center;">Abstractive summarization</h2>
+                <p>Experience a new level of content understanding with our app's abstractive summarization. We go beyond simple extraction, generating human-like summaries that capture the essence of the text while using natural language to convey key ideas. Unlock the power of concise, insightful content summaries, and transform the way you engage with information.</p>
+            </div>
+            {% endif %}
+    
+            {% if error %}
+                <h2>Error:</h2>
+                <p>{{ error }}</p>
+            {% endif %}
+            </div>
+        <div class="abs-input">
+        <form method="POST" action="/abs_summarize" enctype="multipart/form-data">
+            <label for="pdf_file">Upload a PDF file:</label>
+            <input type="file" id="pdf_file" name="pdf_file" accept=".pdf" required>
+            <br>
+            <input  id="btn-dn" type="submit" value="Submit">
+        </form>
+        </div>
+        
+    </div>
+
+    <script>
+        // code for dark theme
+
+const themeStyle = document.getElementById("theme-style");
+const themeToggle = document.getElementById("theme-toggle");
+
+let currentTheme = localStorage.getItem("theme") || "light"; // Default to light theme
+
+// Function to toggle the theme
+function toggleTheme() {
+    if (currentTheme === "light") {
+        themeStyle.href = "{{url_for('static',filename='darkindex.css')}}";
+        themeToggle.textContent = "Light";
+        currentTheme = "Dark";
+    } else {
+        themeStyle.href = "{{url_for('static',filename='index.css')}}";
+        themeToggle.textContent = "Dark";
+        currentTheme = "light";
+    }
+    
+    // Save the current theme preference
+    localStorage.setItem("theme", currentTheme);
+}
+// Add an event listener to the theme toggle button
+themeToggle.addEventListener("click", toggleTheme);
+
+// Check if the theme preference is saved in localStorage
+if (localStorage.getItem("theme")) {
+    currentTheme = localStorage.getItem("theme");
+    // Apply the saved theme without toggling
+    if (currentTheme === "Dark") {
+        themeStyle.href = "{{url_for('static',filename='darkindex.css')}}";
+    }
+} else {
+    // If the theme preference is not set in localStorage, default to "light" theme
+    currentTheme = "light";
+}
+
+
+
+    </script>
+</body>12
+</html>

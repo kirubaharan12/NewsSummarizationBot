@@ -1,0 +1,32 @@
+<!-- templates/news_template.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>News Template</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='result.css')}}">
+</head>
+<body>
+
+    {% if title=="top news" %}
+        <h1>Top News</h1>
+    {% elif title %}
+        <h1>TRENDING NEWS IN {{title}}</h1>
+    {% else %}
+        <h1> TOP NEWS</h1>
+    {% endif %}
+
+    <ul>
+      {% for news in news_list %}
+        <li>
+          <h2 class="news-title">{{ news.title }}</h2>
+          <div class="news-meta">
+            <p class="news-source"><strong>{{ news.source }}</strong></p>
+            <p class="news-date"><strong>{{ news.published_date }}</strong></p>
+          </div>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ news.summary }}</p>
+          <a href="{{ news.link }}" target="_blank">Read More</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>

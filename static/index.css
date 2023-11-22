@@ -1,0 +1,614 @@
+/* code for top-bar section */
+body, h1 {
+    margin: 0;
+    background-image: url(backside.jpg);
+    background-size: cover;
+  }
+
+#btn-dn{
+    background-color: #2bb1e6;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    border: 1px solid #2bb1e6;
+}
+
+#btn-dn:hover{
+    background-color: #ffffff;
+    color: #2bb1e6;
+    border: 1px solid #2bb1e6;
+}
+
+.top-bar {
+    background-color: transparent; /* Set background color to transparent */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+}
+
+.top-bar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.top-bar .buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.top-bar .top-button {
+    background-color: transparent;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.top-bar .top-button:hover {
+    text-decoration: none;
+    color: white;
+}
+
+#theme-toggle{
+    background-color: transparent;
+    border: none;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 0 15px 0 15px;
+}
+
+#theme-toggle:hover{
+    background-color: black;
+    color: white;
+
+}
+
+
+/* the article message and a image */
+.side-image {
+    display: flex;
+    height: 500px;
+    margin: 10px; /* Add margin to the side-image div */
+
+}
+
+.message {
+    flex: 1;
+    padding: 20px;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+}
+
+.message h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.simage {
+    flex: 1;
+    background-image: url();
+    background-size: cover;
+    box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.2);
+    margin:15px;
+    border-radius: 7px;
+    background-color: white;
+
+}
+
+
+/* code for search section bar */
+
+.search-section-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-top: 50px;
+
+}
+
+.search-section-first{
+    width: 40%;
+    background-color: white;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    text-align: center;
+    height: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 6px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-label-search {
+    font-size: 18px;
+    color: #333; /* Change the text color to a darker shade */
+}
+
+/* Style the input field */
+.input-search {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.ip-search {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc; /* Add a subtle border */
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s ease-in-out;
+}
+
+.ip-search::placeholder {
+    color: #999; /* Change the placeholder text color */
+}
+
+/* Style the search button */
+.search-button-fetch {
+    padding: 10px 20px;
+    background-color: #606263; /* Change the button color to blue */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.search-button-fetch:hover {
+    background-color: #000000; /* Darken the button color on hover */
+}
+
+
+.search-section-second{
+    padding-left: 10px;
+    padding-right: 100px;
+    width: 50%;
+
+}
+
+/* code for catogory section bar */
+
+.category-section-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    padding-top: 30px;
+}
+
+.category-section{
+    width: 40%;
+    box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    align-items: center;
+    text-align: center;
+    height: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 6px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-label {
+    font-size: 18px;
+    color: #333;/* Change the text color to a darker shade */
+}
+
+/* Style the select dropdown */
+.styled-select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc; /* Add a subtle border */
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s ease-in-out;
+}
+
+/* Style the button */
+.top-button {
+    padding: 10px 20px;
+    background-color: #606263; /* Change the button color to blue */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.top-button:hover {
+    background-color: #000000; /* Darken the button color on hover */
+}
+
+.category-section-message{
+    padding-left: 100px;
+    padding-right: 10px;
+    width: 50%;
+
+}
+
+ /* URL input section */
+
+ .url-bar{
+    margin: 10px;
+ }
+ 
+ .url-input-full{
+    display: flex;
+    align-items: center;
+    height: 70px;
+    margin: 60px 0 30px 0;
+ }
+ .url-inputbar{
+    float: left;
+    width: 70%;
+ }
+
+ .url-inputbar input{
+    width: 92%;
+    height: 30px;
+    margin:0 2% 0 6%;
+    border: 2px solid #606263; /* Example border style and color */
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    color: #333; /* Text color */
+    font-family: Arial, sans-serif;
+
+ }
+
+ .url-inputbar input::placeholder{
+    color: #999;
+ }
+
+ .url-inputbar input:hover {
+    background-color: #f0f0f0; /* Change background color on hover */
+}
+
+ .url-inputbar input:focus {
+    border-color: #606263; /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a box shadow on focus */
+}
+
+.url-inputbar input:disabled {
+    background-color: #ccc; /* Change background color for disabled input */
+    cursor: not-allowed; /* Change cursor style */
+}
+ .url-button{
+    float: right;
+    width: 30%;
+ }
+ .url-button input{
+    width: 80%;
+    height: 40px;
+    margin: 0 20% 0 0;
+    color: white;
+    border: #606263;
+    background-color: #606263;
+    border-radius: 5px;
+    font-size: 20px;
+ }
+
+ /* language section and url-output section */
+
+.language-and-message{
+    display: flex;
+}
+
+.language-container{
+    flex:10%;
+    text-align: center;
+    height: 300px;
+    box-shadow: 
+    0px 5px 10px rgba(0, 0, 0, 0.2), /* Shadow on the bottom */
+    0px -5px 10px rgba(0, 0, 0, 0.2), /* Shadow on the top (negative offset) */
+    5px 0px 10px rgba(0, 0, 0, 0.2); /* Shadow on the right */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 300px;
+ /* Add a light background color */
+    border-radius: 6px;
+    margin-left: 10px;
+}
+
+.input-language label {
+    font-size: 18px;
+    color: #333; /* Change the text color to a darker shade */
+    margin-bottom: 10px; /* Add some space between the label and input */
+    display: block; /* Make the label a block element to separate it from the input */
+}
+
+/* Style the language input field */
+.input-language input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc; /* Add a subtle border */
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s ease-in-out;
+}
+
+.input-language input::placeholder {
+    color: #999; /* Change the placeholder text color */
+}
+
+/* Style the labels for language selection */
+.slang {
+    font-size: 20px;
+    color: white; /* Change the label color to blue */
+    margin-top: 10px; /* Add some space between the labels and "To" */
+    padding: 8px 16px; /* Add padding to the labels */
+    background-color: #606263; /* Add a light background color to labels */
+    border-radius: 4px;
+}
+
+/* Add a bit of space between "To" and the second label */
+h4 {
+    margin-top: 10px;
+}
+
+
+
+.summary{
+    flex:50%;
+    height: 300px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 5px;
+    margin: 0 10px 0 10px ;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+
+.summary-empty{
+    margin: 10px;
+}
+
+.summary-output{
+    margin: 10px;
+}
+
+/* audio file */
+.audio{
+    display: flex;
+    align-items: center;
+}
+
+.audio-message{
+    background-color: #f1f1f1;
+    flex: 50%;
+
+}
+
+.audio-selection{
+    flex:60%;
+    text-align: center;
+    display: inline-block;
+    padding: 20px;
+    color: black;
+    cursor: pointer;
+    box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px; 
+    margin-right: 10%;
+    width: 250px; 
+    height:150px;
+    background-color: white;
+
+}
+
+.audio-selection h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Style the file input */
+.audio-input {
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 80%; 
+    outline: none;
+    transition: border-color 0.2s ease-in-out;
+}
+
+/* Style the submit button */
+.audio-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #606263; 
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.audio-button:hover {
+    background-color: #000000; 
+}
+
+.audio-div{
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.audio-output{
+    margin: 10px 10px 10px 10px;
+}
+.empty-audio-output{
+    margin: 0 30px 0 30px;
+}
+
+.audio{
+    margin:40px 0 60px 0;
+}
+
+
+/* code for ext summarizer */
+
+.pdf-summarizer{
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center;
+}
+
+.ext-input{
+    flex: 30%;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    color: black;
+    cursor: pointer;
+    box-shadow: 5px -5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px; 
+    margin-left: 4%;
+    margin-bottom: 30px;
+
+
+    background-color: #f5f5f5;
+}
+
+
+.header {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.file-label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.file-input {
+    padding: 10px;
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #606263;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-button:hover {
+    background-color: black;
+}
+
+
+.ext-output{
+    flex: 60%;
+    margin: 20px;
+}
+
+
+/* code for abs - summarizer */
+
+
+.abs-pdf-summarizer{
+    display: flex;
+    align-items: center;
+}
+
+.abs-input{
+    flex: 50%;
+    text-align: center;
+    align-items: center;
+    display: inline-block;
+    padding: 20px;
+    color: black;
+    cursor: pointer;
+    box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px; 
+    margin-right: 4%;
+    margin-bottom: 30px;
+    width: 40%; 
+    height:200px;
+    background-color: white;
+    max-width: 400px;
+    
+}
+
+.abs-input label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+
+.abs-input input[type="file"] {
+    padding: 10px;
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.abs-input input[type="submit"] {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #606263;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.abs-input input[type="submit"]:hover {
+    background-color: #030303;
+}
+
+.abs-output{
+    flex: 50%;
+    margin: 20px;
+}

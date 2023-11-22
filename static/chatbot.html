@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sliding Divs</title>
+    <style>
+        /* CSS to style the outer container and inner divs */
+        .container {
+            position: relative;
+            width: 660px; /* Adjust the desired width */
+            height: 400px; /* Adjust the desired height */
+            overflow: hidden; /* Hide overflowing content */
+            border: 1px solid #ccc;
+        }
+
+        .chatbot {
+            display: flex;
+            width: 200%; /* Make the inner container twice as wide as the outer container to accommodate both divs side by side */
+            transition: transform 0.3s ease-in-out; /* Smooth transition for sliding effect */
+        }
+
+        .box,
+        .box2 {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .box input{
+            border-radius: 5px;
+            padding: 10px;
+        }
+        .box button{
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .box2 input{
+            border-radius: 5px;
+            padding: 10px;
+        }
+        .box2 button{
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        /* Style the navigation buttons */
+        .prev-btn,
+        .next-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 10px;
+            background-color: white;
+            color: black;
+            border: none;
+            cursor: pointer;
+        }
+
+        .prev-btn {
+            left: 10px;
+            background-image: url(bs.png);
+            background-size: cover;
+            background-position: center;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .next-btn {
+            right: 10px;
+            background-image: url(ri.png);
+            background-size: cover;
+            background-position: center;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .limg{
+            height: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="chatbot">
+            <div class="box">
+                <div class="answer-container" id="answerContainer1">
+                    <div id="chatbotResponses1"></div>
+                </div>
+                <div class="input-container">
+                    <input type="text" id="userInput1" placeholder="Chatbot 1: Type your message...">
+                    <button id="submitButton1">Submit</button>
+                </div>
+            </div>
+            <div class="box2">
+                <div class="answer-container" id="answerContainer2">
+                    <div id="chatbotResponses2"></div>
+                </div>
+                <div class="input-container">
+                    <input type="text" id="userInput2" placeholder="Chatbot 2: Type your message...">
+                    <button id="submitButton2">Submit</button>
+                </div>
+            </div>
+        </div>
+        <button class="prev-btn"></button>
+        <button class="next-btn"></button>
+    </div>
+
+    <script>
+
+                // Chatbot 1
+                const userInput1 = document.getElementById('userInput1');
+        const submitButton1 = document.getElementById('submitButton1');
+        const chatbotResponses1 = document.getElementById('chatbotResponses1');
+
+        submitButton1.addEventListener('click', () => {
+            const userMessage = userInput1.value;
+
+            // Send user input to Flask backend for Chatbot 1
+            fetch('/process_user_input_bot1', { // Change the endpoint for Chatbot 1
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ userMessage: userMessage }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Display the user's message and chatbot's response for Chatbot 1
+                chatbotResponses1.innerHTML += `<p><strong>You (Chatbot 1):</strong> ${userMessage}</p>`;
+                chatbotResponses1.innerHTML += `<p><strong>Chatbot 1:</strong> ${data.chatbotResponse}</p>`;
+
+                // Clear the input field for Chatbot 1
+                userInput1.value = '';
+            });
+        });
+
+        // Chatbot 2
+        const userInput2 = document.getElementById('userInput2');
+        const submitButton2 = document.getElementById('submitButton2');
+        const chatbotResponses2 = document.getElementById('chatbotResponses2');
+
+        submitButton2.addEventListener('click', () => {
+            const userMessage = userInput2.value;
+
+            // Send user input to Flask backend for Chatbot 2
+            fetch('/process_user_input_bot2', { // Change the endpoint for Chatbot 2
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ userMessage: userMessage }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Display the user's message and chatbot's response for Chatbot 2
+                chatbotResponses2.innerHTML += `<p><strong>You (Chatbot 2):</strong> ${userMessage}</p>`;
+                chatbotResponses2.innerHTML += `<p><strong>Chatbot 2:</strong> ${data.chatbotResponse}</p>`;
+
+                // Clear the input field for Chatbot 2
+                userInput2.value = '';
+            });
+        });
+
+        // code for sliding div
+
+    // JavaScript to handle the sliding effect and button visibility
+const innerContainer = document.querySelector('.chatbot');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+
+let currentIndex = 0; // Keep track of the currently displayed div (0 for div1, 1 for div2)
+
+// Function to update button visibility
+function updateButtonVisibility() {
+    if (currentIndex === 0) {
+        prevBtn.style.display = 'none'; // Hide "Previous" button in div1
+        nextBtn.style.display = 'block'; // Show "Next" button in div1
+    } else {
+        prevBtn.style.display = 'block'; // Show "Previous" button in div2
+        nextBtn.style.display = 'none'; // Hide "Next" button in div2
+    }
+}
+
+prevBtn.addEventListener('click', () => {
+    if (currentIndex === 1) {
+        currentIndex = 0;
+        innerContainer.style.transform = 'translateX(0%)';
+        updateButtonVisibility();
+    }
+});
+
+nextBtn.addEventListener('click', () => {
+    if (currentIndex === 0) {
+        currentIndex = 1;
+        innerContainer.style.transform = 'translateX(-50%)';
+        updateButtonVisibility();
+    }
+});
+
+// Initialize button visibility
+updateButtonVisibility();
+
+
+    </script>
+</body>
+</html>
